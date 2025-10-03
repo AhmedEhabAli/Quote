@@ -45,14 +45,24 @@ var randomQuote = [
 ];
 
 var storage;
+var newQuote = [];
 
 function quote() {
   var x = Math.floor(Math.random() * randomQuote.length);
-  if (storage === x) {
+
+  if (newQuote.length === randomQuote.length) {
+    newQuote = [];
+  }
+
+  if (newQuote.indexOf(x) != -1) {
     return quote();
   }
+
+  newQuote.push(x);
+
   document.getElementById("paragraph").innerHTML = randomQuote[x].paragraph;
   document.getElementById("authorName").innerHTML = randomQuote[x].authorName;
+
   storage = x;
   return x;
 }
