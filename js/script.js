@@ -54,7 +54,7 @@ function quote() {
     newQuote = [];
   }
 
-  if (newQuote.indexOf(x) != -1) {
+  if (newQuote.indexOf(x) !== -1) {
     return quote();
   }
 
@@ -66,3 +66,4 @@ function quote() {
   storage = x;
   return x;
 }
+
